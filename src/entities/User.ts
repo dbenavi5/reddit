@@ -1,11 +1,11 @@
 import { Entity, OptionalProps, PrimaryKey, Property } from "@mikro-orm/core";
-import { Field, Int, ObjectType } from "type-graphql";
+import { Field, ObjectType } from "type-graphql";
 
 @ObjectType()
 @Entity()
 export class User {
     [OptionalProps]?: 'title' | 'createdAt' | 'updatedAt';
-    @Field(() => Int)
+    @Field()
     @PrimaryKey()
     id!: number; // string is also supported
 
